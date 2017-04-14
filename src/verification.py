@@ -2,7 +2,7 @@ import face_recognition
 import os
 
 donald_image_path = os.path.join(os.environ.get("INPUT_DIR"), 'donald_trump', '1.jpg')
-unknow_image_path = os.path.join(os.environ.get("INPUT_DIR"), 'donald_trump', '2.jpg')
+unknow_image_path = os.path.join(os.environ.get("INPUT_DIR"), 'test', 'test_image.jpg')
 known_image = face_recognition.load_image_file(donald_image_path)
 unknown_image = face_recognition.load_image_file(unknow_image_path)
 

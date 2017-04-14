@@ -1,10 +1,11 @@
 FROM acusensehub/dlib-scikit:14.04
 
-VOLUME ["/home/_data", "/home/_inputs", "/home/_outputs", "/home/src"]
+VOLUME ["/home/_data", "/home/_inputs", "/home/_shared_outputs", "/home/src", "/home/_snapshots"]
 
 # Setup environment variables
 ENV INPUT_DIR=/home/_inputs
-ENV OUTPUT_DIR=/home/_outputs
+ENV SHARED_OUTPUT_DIR=/home/_shared_outputs
+ENV SNAPSHOTS_DIR=/home/_snapshots
 ENV DATA_DIR=/home/_data
 ENV SRC_DIR=/home/src
 
