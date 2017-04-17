@@ -23,7 +23,7 @@ for file_path in glob(os.environ.get("INPUT_DIR")+"/*/*"):
             data.append(face_encoding)
             target.append(face_names.index(class_name))
 
-
+face_names = np.array(face_names)
 data = np.asarray(data)
 dimensions = range(len(face_encoding))
 
@@ -36,10 +36,12 @@ train, test = df[df['is_train']==True], df[df['is_train']==False]
 
 features = df.columns[:len(face_encoding)]
 clf = RandomForestClassifier(n_jobs=4)
-y, _ = pd.factorize(train['species'])
+y, _ = pd.factorize(train['face'])
 clf.fit(train[features], y)
 checkpoint = ScikitCheckpoint(os.environ['SNAPSHOTS_DIR'], )
 stats = {'label': 'random_forest'}
 checkpoint.save_model(clf, stats)
+preds = face_names[np.array(clf.predict(test[features]))]
 preds = face_names[clf.predict(test[features])]
-pd.crosstab(test['face'], preds, rownames=['actual'], colnames=['preds'])
+cross_validation = pd.crosstab(test['face'], preds, rownames=['actual'], colnames=['preds'])
+print(cross_validation)
