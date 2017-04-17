@@ -12,16 +12,16 @@ target = []
 face_names = ['donald_trump', 'mike_pence', 'putin']
 i = 0
 for file_path in glob(os.environ.get("INPUT_DIR")+"/*/*"):
-    class_name = file_path.split('/')[-1]
+    class_name = file_path.split('/')[-2]
     if not class_name == 'test':
         print(i)
         i += 1
-        target.append(face_names.index(class_name))
         load_image = face_recognition.load_image_file(file_path)
-        face_encoding = face_recognition.face_encodings(load_image)[0]
-        data.append(face_encoding)
-
-
+        list_encoding = face_recognition.face_encodings(load_image)
+        if len(list_encoding) > 0:
+            face_encoding = list_encoding[0]
+            data.append(face_encoding)
+            target.append(face_names.index(class_name))
 
 
 data = np.asarray(data)
