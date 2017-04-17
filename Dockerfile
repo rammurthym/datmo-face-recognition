@@ -22,6 +22,7 @@ COPY src /home/src
 
 RUN find /home/src/scripts -name "*.sh" -exec chmod +x {} +
 RUN pip install face_recognition
+RUN pip install --upgrade html5lib==1.0b8
 
 # Working directory: this is where unix scripts will run from
 WORKDIR /home/src
