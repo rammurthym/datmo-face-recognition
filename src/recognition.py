@@ -11,7 +11,7 @@ data = []
 target = []
 face_names = ['donald_trump', 'mike_pence', 'putin']
 i = 0
-for file_path in glob.glob(os.environ.get("INPUT_DIR")+"/*/*"):
+for file_path in glob(os.environ.get("INPUT_DIR")+"/*/*"):
     print(i)
     i+=1
     load_image = face_recognition.load_image_file(file_path)
