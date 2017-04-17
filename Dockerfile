@@ -13,7 +13,6 @@ ENV SRC_DIR=/home/src
 RUN sudo apt-get update -y
 
 # Numpy / Scipy reqs
-RUN sudo apt-get install python-pandas -y
 RUN sudo apt-get install python-sympy -y
 
 RUN mkdir -p /home/src
@@ -22,7 +21,7 @@ COPY src /home/src
 
 RUN find /home/src/scripts -name "*.sh" -exec chmod +x {} +
 RUN pip install face_recognition
-RUN pip install --upgrade html5lib==1.0b8
+RUN pip install pandas
 
 # Working directory: this is where unix scripts will run from
 WORKDIR /home/src
