@@ -5,11 +5,13 @@ import numpy as np
 from glob import glob
 from sklearn.ensemble import RandomForestClassifier
 from scikit_checkpoint import ScikitCheckpoint
-
+from sklearn.cluster import KMeans
+np.random.seed(5)
 
 data = []
 target = []
 face_names = ['donald_trump', 'mike_pence', 'putin']
+num_faces = len(face_names)
 i = 0
 for file_path in glob(os.environ.get("INPUT_DIR")+"/*/*"):
     class_name = file_path.split('/')[-2]

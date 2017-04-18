@@ -23,5 +23,7 @@ RUN find /home/src/scripts -name "*.sh" -exec chmod +x {} +
 RUN pip install face_recognition
 RUN pip install pandas
 
+
+
 # Working directory: this is where unix scripts will run from
 WORKDIR /home/src
