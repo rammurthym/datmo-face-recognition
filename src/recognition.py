@@ -14,7 +14,7 @@ face_names = []
 num_faces = len(face_names)
 faces_selected = set()
 
-for file_path in glob(os.environ.get("INPUT_DIR")+"/*/*"):
+for file_path in glob(os.environ.get("DATA_DIR")+"/*/*"):
     class_name = file_path.split('/')[-2]
     if not class_name == 'test':
         if class_name not in faces_selected:
