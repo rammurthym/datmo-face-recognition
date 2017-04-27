@@ -5,7 +5,7 @@
 ### 1. Face Detection ([detection](https://github.com/Acusense/face-recognition/blob/master/src/detection.py))
 * To find bounding box for faces.
 * To find number of people in any image.
-* Application can range like Facebook using this to find count of people and detect face to let users tag it.
+* Usage: Application can range like Facebook using this to find count of people and detect face to let users tag it.
 
 ### 2. Facial Landmark Detection ([landmark_detection](https://github.com/Acusense/face-recognition/blob/master/src/landmark_detection.py))
 
