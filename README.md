@@ -1,3 +1,6 @@
+## Datmo CLI 
+   [Documentation](https://acusense.github.io/datmo-cli-docs/)
+   
 ## Face-Recognition
 
   This repository comprises main tasks required to be done using facial recognition
