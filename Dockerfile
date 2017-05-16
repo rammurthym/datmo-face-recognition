@@ -22,7 +22,7 @@ COPY src /home/src
 RUN find /home/src/scripts -name "*.sh" -exec chmod +x {} +
 RUN pip install face_recognition
 RUN pip install pandas
-
+RUN pip install matplotlib
 
 
 # Working directory: this is where unix scripts will run from
