@@ -24,6 +24,8 @@ RUN pip install face_recognition
 RUN pip install pandas
 RUN pip install matplotlib
 
+RUN pip install flask
+EXPOSE 5000
 
 # Working directory: this is where unix scripts will run from
 WORKDIR /home/src
