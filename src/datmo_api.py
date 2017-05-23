@@ -19,7 +19,7 @@ def api_root(func_name):
                 if json_req_data:
                     res = function[1](json_req_data)
             except Exception as e:
-                return jsonify({"error": str(e)})
+                return jsonify({"error": "Something is wrong"})
             return jsonify({"result": res})
     output_string = 'function: %s not found' % func_name
     return jsonify({"error": output_string})
