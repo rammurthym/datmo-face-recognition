@@ -5,7 +5,7 @@ import os
 import numpy as np
 import face_recognition
 
-filename = os.path.join(os.environ['SHARED_OUTPUT_DIR'],'finalized_model.pkl')
+filename = os.path.join(os.environ['INPUT_DIR'],'model.dat')
 clf = pickle.load( open(filename , "rb" ) )
 
 def add(params):
