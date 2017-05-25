@@ -1,1 +1,1 @@
-{"n_jobs":2, "class_names":["donald_trump","other"],"split_prob":0.6}
+{"n_jobs":8, "class_names":["other", "donald_trump"],"split_prob":0.6}

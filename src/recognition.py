@@ -3,6 +3,7 @@ import os
 import pandas as pd
 import numpy as np
 import json
+import pickle
 from glob import glob
 from sklearn.ensemble import RandomForestClassifier
 from scikit_checkpoint import ScikitCheckpoint
@@ -40,6 +41,9 @@ for file_path in glob(os.environ.get("DATA_DIR")+"/*/*"):
 face_names = np.array(face_names)
 data = np.asarray(data)
 dimensions = range(len(face_encoding))
+filename = os.path.join(os.environ['SHARED_OUTPUT_DIR'],'face_names.pkl')
+pickle.dump(face_names, open(filename, 'wb'))
+
 
 df = pd.DataFrame(data, columns=dimensions)
 df['is_train'] = np.random.uniform(0, 1, len(df)) <= split_prob
